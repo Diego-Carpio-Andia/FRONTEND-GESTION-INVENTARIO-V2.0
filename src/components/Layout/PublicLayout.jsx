@@ -35,7 +35,7 @@ export const PublicLayout = () => {
     <>
       {/* BODY */}
       <img src={tiendaImagen}  
-          style={{position: 'absolute', left: 0, top: 0,Width:'1737px',overflow:'hidden', height:'1158px'}}
+          style={{position: 'absolute', left: 0, top: 0,Width:'2037px',overflow:'hidden', height:'1458px'}}
           alt="Descripción de la imagen"
         />
 

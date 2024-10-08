@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { TextField, Button, Container, Typography, List, ListItem, ListItemText, Backdrop, CircularProgress } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { Global } from '../../helpers/global';
+import imagenLogo from '../../assets/imagenes/logo2.png';
 
 const Registro = () => {
   const [formData, setFormData] = useState({
@@ -90,17 +91,22 @@ const Registro = () => {
 
   return (
     <>
+     <img src={imagenLogo}  
+          style={{position: 'absolute', left: "42%", top: 8,Width:'20%',overflow:'hidden', height:'20%'}}
+          alt="Descripción de la imagen"
+      />
     <Container
       sx={{
         p: 3,
+        mt: 15,
         border: '2px solid White',
         backgroundColor: 'rgba(255, 255, 255, 0.7)', // Fondo blanco semitransparente
         borderRadius: 2
       }}
       maxWidth="xs"
     >
-      <Typography sx={{letterSpacing: 3, fontWeight: 'bolder', color: '#666666'}} variant="h4" align="center" gutterBottom>
-        REGISTRESE
+      <Typography sx={{letterSpacing: 3, fontWeight: 'bolder', color: '#666666'}} variant="h5" align="center" gutterBottom>
+        CREE UNA CUENTA
       </Typography>
       {error && <Typography color="error" align="center" gutterBottom>{error}</Typography>}
       <form onSubmit={handleRegistro}>

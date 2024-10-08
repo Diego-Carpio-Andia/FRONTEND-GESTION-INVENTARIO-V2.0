@@ -3,6 +3,7 @@ import { TextField, Button, Container, Typography, Backdrop, CircularProgress } 
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { Global } from '../../helpers/global';
+import imagenLogo from '../../assets/imagenes/logo2.png';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -42,15 +43,21 @@ const Login = () => {
   };
 
   return (
+    <>
+    <img src={imagenLogo}  
+          style={{position: 'absolute', left: "42%", top: 8,Width:'20%',overflow:'hidden', height:'20%'}}
+          alt="Descripción de la imagen"
+      />
     <Container
-      sx={{
-        p: 3,
-        border: '2px solid White',
-        backgroundColor: 'rgba(255, 255, 255, 0.7)', // Fondo blanco semitransparente
-        borderRadius: 2
-      }}
-      maxWidth="xs"
-    >
+    sx={{
+      p: 3,
+      mt: 16,
+      border: '2px solid White',
+      backgroundColor: 'rgba(255, 255, 255, 0.7)', // Fondo blanco semitransparente
+      borderRadius: 2
+    }}
+    maxWidth="xs"
+    >      
       <Typography sx={{letterSpacing: 10, fontWeight: 'bolder', color: '#666666'}} variant="h4" align="center" gutterBottom>
         BIENVENIDO
       </Typography>
@@ -68,7 +75,7 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
           fullWidth
           margin="normal"
-        />
+          />
         <TextField
           label="Contraseña"
           variant="outlined"
@@ -77,7 +84,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           fullWidth
           margin="normal"
-        />
+          />
         <Typography sx={{mt:2}}>
           No tiene cuenta? <Link to="/registro">Regístrese aquí</Link>
         </Typography>
@@ -89,6 +96,7 @@ const Login = () => {
         <CircularProgress color="inherit" />
       </Backdrop>
     </Container>
+    </>
   );
 };
 
