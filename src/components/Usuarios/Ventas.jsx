@@ -124,13 +124,14 @@ const [selectedProductStock, setSelectedProductStock] = useState(null); // Nuevo
     setOpenVentaDialog(true);
   };
 
-  const handleRegister = async () => {
-    if (selectedProductStock <= 15) {
+  const handleRegister = async () => {   
+
+    if (selectedProductStock <= 10 || parseInt(formData.Cantidad) > selectedProductStock) {
       setSnackbarMessage('Stock muy bajo. No puedes vender.');
       setSnackbarOpen(true);
       return;
     }
-  
+       
     const nuevaVenta = { 
       Cantidad: parseInt(formData.Cantidad), 
       ListaProducto: formData.ListaProducto,
@@ -154,7 +155,7 @@ const [selectedProductStock, setSelectedProductStock] = useState(null); // Nuevo
   };
 
   const handleEdit = async () => {
-    if (selectedProductStock < 1) {
+    if (selectedProductStock < 10) {
       setSnackbarMessage('Stock muy bajo. No puedes vender.');
       setSnackbarOpen(true);
       return;
