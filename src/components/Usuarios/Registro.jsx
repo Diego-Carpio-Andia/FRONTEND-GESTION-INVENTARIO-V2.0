@@ -74,6 +74,7 @@ const Registro = () => {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem('token', data.token);
+        window.location.reload()
         navigate('/inventory/dashboard');
       } else {
         if (response.status === 400) {

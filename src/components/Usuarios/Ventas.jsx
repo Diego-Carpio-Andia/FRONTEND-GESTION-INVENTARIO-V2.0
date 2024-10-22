@@ -125,7 +125,7 @@ const [selectedProductStock, setSelectedProductStock] = useState(null); // Nuevo
   };
 
   const handleRegister = async () => {
-    if (selectedProductStock <= 1) {
+    if (selectedProductStock <= 15) {
       setSnackbarMessage('Stock muy bajo. No puedes vender.');
       setSnackbarOpen(true);
       return;
